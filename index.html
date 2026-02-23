@@ -1,114 +1,304 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Karthik | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f9;
-            color: #333;
-        }
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            border-bottom: 2px solid #1f2937;
-            padding-bottom: 10px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1f2937;
-            color: white;
-        }
-    </style>
+<title>Karthik | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #111827);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #f1f5f9;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+nav {
+    backdrop-filter: blur(12px);
+    background: rgba(15,23,42,0.8);
+    padding: 14px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #cbd5e1;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+header {
+    text-align: center;
+    padding: 130px 20px 70px 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #38bdf8, #6366f1, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(56,189,248,0.3);
+}
+
+header p {
+    color: #94a3b8;
+    margin: 6px 0;
+}
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 26px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #38bdf8, #6366f1);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    transform: scale(1.05);
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    background: linear-gradient(45deg, #38bdf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.divider {
+    height: 2px;
+    width: 60%;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    opacity: 0.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(30,41,59,0.8);
+    padding: 22px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.highlight {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+/* NEW IMPORTANT HIGHLIGHT */
+.important {
+    color: #facc15;
+    font-weight: bold;
+}
+
+a { color: #38bdf8; text-decoration: none; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+    background: rgba(0,0,0,0.4);
+}
+</style>
 </head>
 
 <body>
 
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
+<a href="#profiles">Profiles</a>
+<a href="#contact">Contact</a>
+</nav>
+
 <header>
-    <h1>Karthik</h1>
-    <p>Computer Engineering Student | Blockchain & AI Enthusiast</p>
+<h1>GUNJI VENKATA KRISHNA KARTHIK</h1>
+<p>Computer Science Engineering Student</p>
+<a href="resume.docx" class="resume-btn" download>Download Resume</a>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a motivated Computer Engineering student passionate about 
-        Blockchain, Artificial Intelligence, and Software Development. 
-        I enjoy building innovative solutions to solve real-world problems.
-    </p>
+<div class="divider"></div>
+
+<section id="about">
+<h2>About</h2>
+<div class="grid">
+<div class="card">
+Pre Final-year engineering student specializing in Computer Science and Engineering,
+with a strong foundation in Java and MySQL. Seeking an entry-level opportunity to apply
+technical knowledge and problem-solving skills.
+</div>
+</div>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <div class="card">
-        <strong>Programming:</strong> Python, Java, C, SQL<br>
-        <strong>Web:</strong> HTML, CSS, JavaScript<br>
-        <strong>Database:</strong> MySQL<br>
-        <strong>Blockchain:</strong> Ethereum, Ganache, MetaMask<br>
-        <strong>Tools:</strong> Git, VS Code
-    </div>
+<div class="divider"></div>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">
+<span class="highlight">B.E/B.Tech – CSE</span><br>
+Panimalar Engineering College – 2027<br>
+CGPA: <span class="important">8.125 / 10</span>
+</div>
+
+<div class="card">
+<span class="highlight">Class XII</span><br>
+BIEAP, Viswasai Junior College – <span class="important">75.1%</span> (2023)
+</div>
+
+<div class="card">
+<span class="highlight">Class X</span><br>
+BSEAP, Red Cherries – <span class="important">99.1%</span> (2021)
+</div>
+</div>
 </section>
 
-<section>
-    <h2>Projects</h2>
-    <div class="card">
-        <h3>Chain of Hope – Blockchain for Ethical Blood and Organ Matching</h3>
-        <p>
-            Designed and implemented a decentralized system using Ethereum blockchain 
-            to ensure transparency and secure donor-recipient matching.
-        </p>
-    </div>
+<div class="divider"></div>
 
-    <div class="card">
-        <h3>Employee Database Management System</h3>
-        <p>
-            Created and managed employee records using MySQL with DDL commands 
-            and constraints to maintain data integrity.
-        </p>
-    </div>
+<section id="skills">
+<h2>Technical Skills</h2>
+<div class="grid">
+<div class="card"><span class="highlight">Programming:</span> Java, Python, C</div>
+<div class="card"><span class="highlight">Web:</span> HTML, CSS, JavaScript</div>
+<div class="card"><span class="highlight">Databases:</span> MySQL, MongoDB</div>
+<div class="card"><span class="highlight">Tools:</span> Git, VS Code, Eclipse</div>
+<div class="card"><span class="highlight">Operating Systems:</span> Windows</div>
+</div>
 </section>
 
-<section>
-    <h2>Certifications</h2>
-    <div class="card">
-        <p>Python Programming Certification</p>
-        <p>SQL / Database Management</p>
-        <p>Blockchain Fundamentals</p>
-    </div>
+<div class="divider"></div>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card">
+<span class="highlight">CHAIN-OF-HOPE: BLOCKCHAIN FOR ETHICAL BLOOD AND ORGAN MATCHING</span><br><br>
+Blockchain platform using Ethereum smart contracts for secure donor-recipient matching.
+<br><br>
+<a href="https://github.com/GUNJIVENKATAKRISHNAKARTHIK/chain-of-hope-Blockchain_for_Ethical_Blood_and_Organ_Matching" target="_blank">
+👉 View on GitHub
+</a>
+</div>
+
+<div class="card">
+<span class="highlight">HOTEL MANAGEMENT SYSTEM</span><br><br>
+Python Tkinter + MongoDB desktop system for booking and customer management.
+<br><br>
+<a href="https://github.com/GUNJIVENKATAKRISHNAKARTHIK/HOTEL_MANAGEMENT_SYSTEM" target="_blank">
+👉 View on GitHub
+</a>
+</div>
+
+</div>
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-        <p>GitHub: github.com/yourusername</p>
-    </div>
+<div class="divider"></div>
+
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="grid">
+<div class="card">NASSCOM Acquiring Data – 2024</div>
+<div class="card">Infosys Text Embeddings using Large Language Models – 2026</div>
+<div class="card">Oracle Certified Professional – 2024</div>
+<div class="card">Infosys Java Programming Fundamentals – 2024</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="profiles">
+<h2>Coding & professional Profiles</h2>
+<div class="grid">
+<div class="card"><a href="https://github.com/GUNJIVENKATAKRISHNAKARTHIK" target="_blank">GitHub</a></div>
+<div class="card"><a href="https://leetcode.com/u/KRISHNA7890/" target="_blank">LeetCode</a></div>
+<div class="card"><a href="https://www.hackerrank.com/profile/g65252713" target="_blank">HackerRank</a></div>
+<div class="card"><a href="https://www.linkedin.com/in/venkata-krishna-karthik-gunji" target="_blank">LinkedIn</a></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="grid">
+<div class="card">
+Phone: <span class="important">9392861260</span><br>
+Email: <span class="important">g65252713@gmail.com</span><br>
+Location: <span class="important">Tirupati, Andhra Pradesh</span>
+</div>
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Karthik | All Rights Reserved</p>
+© 2026 GUNJI VENKATA KRISHNA KARTHIK
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+    cards.forEach(card => {
+        if(card.getBoundingClientRect().top < trigger){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
